@@ -1,0 +1,101 @@
+.App {
+  width: 100%;
+}
+
+.title {
+  text-align: center;
+  color: rosybrown;
+}
+
+.table {
+  width: 100%;
+  border-spacing: 0;
+  border-collapse: collapse;
+}
+
+.table__title {
+  text-align: center;
+}
+
+.table__row {
+  width: 100%;
+  text-align: center;
+  border-spacing: 0;
+}
+
+.table__value {
+  width: 10%;
+  padding: 0;
+  border: solid 1px;
+  padding: 3px;
+}
+
+.arrow-up::after {
+  content: '▲';
+}
+
+.arrow-down::after {
+  content: '▼';
+}
+
+.breadcrumps {
+  display: flex;
+  justify-content: flex-end;
+  margin: 20px 10px 0 10px;
+  font-size: 20px;
+}
+
+.results-per-page {
+  display: flex;
+  justify-content: flex-end;
+  margin-right: 40px;
+}
+
+.results-per-page__title {
+  padding: 5px;
+  margin-right: 10px;
+}
+
+.results-per-page__value {
+  padding: 5px 10px;
+  transition: .4s;
+}
+
+.results-per-page__value:hover {
+  cursor: pointer;
+  opacity: .5;
+}
+
+.results-per-page__value.is-active {
+  background-color: yellowgreen;
+}
+
+.pagination {
+
+  display: flex;
+  justify-content: flex-end;
+
+}
+
+.pagination__title {
+  padding: 5px;
+}
+
+.pagination__result-on-page {
+  padding: 5px;
+
+}
+
+.pagination__arrow {
+  padding: 5px;
+  transition: .4s;
+}
+
+.pagination__arrow:hover {
+  cursor: pointer;
+  opacity: .5;
+}
+
+.pagination__page-number {
+  padding: 5px;
+}
