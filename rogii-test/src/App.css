@@ -30,6 +30,10 @@
   padding: 3px;
 }
 
+.table__title-value:hover {
+  cursor: pointer;
+}
+
 .arrow-up::after {
   content: '▲';
 }
