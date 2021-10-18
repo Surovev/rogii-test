@@ -21,6 +21,8 @@
   width: 100%;
   text-align: center;
   border-spacing: 0;
+
+
 }
 
 .table__value {
@@ -28,6 +30,8 @@
   padding: 0;
   border: solid 1px;
   padding: 3px;
+  height: 90px;
+  overflow: hidden;
 }
 
 .table__title-value:hover {

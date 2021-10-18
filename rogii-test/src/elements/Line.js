@@ -1,9 +1,10 @@
 function Line (props) {
 
+
     return (
      <>
         <tr className="table__row">
-          {props.headers.map((header) => (<td className="table__value">{props.currentObj[header]}</td>))}
+          {props.headers.map((header) => (<td key={(props.uniqueNumber).toString() + props.currentObj[header]} className="table__value">{props.currentObj[header]}</td>))}
         </tr>
      </>
     );
