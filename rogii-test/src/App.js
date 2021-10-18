@@ -6,8 +6,14 @@ import LineTitle from './elements/LIneTitle';
 import './App.css';
 import testData from '../src/data/test-data.json';
 
+// исходные данные 
+
 const data = testData.content.map((obj, i) => {obj.number = i + 1;
   return obj});
+
+
+
+// исходные данные
 
 // сортировка   
   function dynamicSort(property) {
@@ -52,11 +58,13 @@ export const store = createStore(reducer)
 
 function App() {
 
+  const headers = Object.keys(data[0]);
+
   const [column, setColumn] = React.useState('');
 
-    const dispatch = useDispatch();
-    const renderData = useSelector(dataForRender => dataForRender)
-    console.log(renderData);
+  const dispatch = useDispatch();
+  const renderData = useSelector(dataForRender => dataForRender);
+
 
     
  function sortData(options) {
@@ -67,44 +75,31 @@ function App() {
       dispatch({type:"COUNT_TABLE"});
     }
 
-
   return (
     <div className="App">
       <h1 className="title">Table</h1>
+      
 
       <table className="table">
+      <tbody>
         <LineTitle
+        
+          headers={headers}
           column={column}
           setColumn={setColumn}
           isTitle
           sortData={sortData}
-          number="№"
-          revision="revision"
-          revstmp="revstmp"
-          user_id="user_id"
-          user_email="user_email"
-          user_name="user_name"
-          well_id="well_id"
-          well_name="well_name"
-          well_type="well_type"
-          changes_summary="changes_summary"
         />
 
         { renderData.map(item => (
          <Line
+          headers={headers}
           key={item.number}
           isTitle={false}
-          number={item.number}
-          revision={item.revision}
-          revstmp={item.revstmp}
-          user_id={item.user_id}
-          user_email={item.user_email}
-          user_name={item.user_name}
-          well_id={item.well_id}
-          well_name={item.well_name}
-          well_type={item.well_type}
-          changes_summary={item.changes_summary}
+          currentObj={item}
+
         />))}
+          </tbody>
       </table>
       <div className="breadcrumps">
         <div className="results-per-page">
@@ -121,7 +116,7 @@ function App() {
           <span className="pagination__arrow">»</span>
         </div>
       </div>
-      
+    
     </div>
   );
 }
