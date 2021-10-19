@@ -8,9 +8,10 @@
 }
 
 .table {
-  width: 100%;
+  width: 90%;
   border-spacing: 0;
   border-collapse: collapse;
+  margin: 0 auto;
 }
 
 .table__title {

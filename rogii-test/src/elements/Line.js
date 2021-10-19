@@ -1,13 +1,13 @@
-function Line (props) {
+function Line(props) {
 
 
-    return (
-     <>
-        <tr className="table__row">
-          {props.headers.map((header) => (<td key={(props.uniqueNumber).toString() + props.currentObj[header]} className="table__value">{props.currentObj[header]}</td>))}
-        </tr>
-     </>
-    );
+  return (
+    <>
+      <tr className="table__row">
+        {props.headers.map((header) => (<td key={(props.uniqueNumber).toString() + props.currentObj[header]} className="table__value">{props.currentObj[header]}</td>))}
+      </tr>
+    </>
+  );
 }
 
 export default Line;
